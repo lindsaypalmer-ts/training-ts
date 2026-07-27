@@ -4,6 +4,49 @@ liveboard:
   visualizations:
   - id: Viz_1
     answer:
+      name: Total sales by Monthly date and region
+      tables:
+      - id: (Sample) Retail - Apparel
+        name: (Sample) Retail - Apparel
+        fqn: cd252e5c-b552-49a8-821d-3eadaa049cca
+      search_query: "[sales] [date].monthly [region] [item type] = 'jackets'"
+      answer_columns:
+      - name: Month(date)
+      - name: Total sales
+      - name: region
+      table:
+        table_columns:
+        - column_id: Month(date)
+          headline_aggregation: MIN-MAX
+        - column_id: Total sales
+          headline_aggregation: SUM
+        - column_id: region
+          headline_aggregation: COUNT_DISTINCT
+        ordered_column_ids:
+        - Month(date)
+        - region
+        - Total sales
+        client_state: ""
+        client_state_v2: "{\"tableVizPropVersion\": \"V1\"}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: Month(date)
+        - column_id: Total sales
+        - column_id: region
+        axis_configs:
+        - x:
+          - Month(date)
+          "y":
+          - Total sales
+          color:
+          - region
+        client_state: ""
+        client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"pivotSummariesState\": {}},\"showStackedLabels\": true,\"allLabels\": true,\"kpiDisplayProperties\": {\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\",\"linkChangeColorsWithAnomaly\": true}},\"columnProperties\": [{\"columnId\": \"Month(date)\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"region\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Total sales\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"5db34d43-7107-461d-9fee-0bb86eca67eb\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"29727ee6-1cac-408d-a2f8-174bcd8c2b0a\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}}],\"axisProperties\": [{\"id\": \"2a587922-4687-43d1-ae81-719988fcc6d4\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total sales\"],\"isOpposite\": false}},{\"id\": \"06e88351-9e62-4e47-ab6b-2e1739ab4182\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"Month(date)\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east\",\"color\": \"#2E75F0\"},{\"serieName\": \"midwest\",\"color\": \"#48D1E0\"},{\"serieName\": \"south\",\"color\": \"#FCC838\"},{\"serieName\": \"southwest\",\"color\": \"#06BF7F\"},{\"serieName\": \"west\",\"color\": \"#8C62F5\"}]}"
+      display_mode: CHART_MODE
+    viz_guid: 216ae737-3e39-4597-a7c0-8ba08a5457ee
+  - id: Viz_2
+    answer:
       name: "Total sales, Total quantity purchased by product"
       tables:
       - id: (Sample) Retail - Apparel
@@ -46,7 +89,7 @@ liveboard:
         client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {\"pivotSummariesState\": {}},\"kpiDisplayProperties\": {\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\",\"linkChangeColorsWithAnomaly\": true}},\"columnProperties\": [{\"columnId\": \"product\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Total sales\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Total quantity purchased\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"44579f56-ddcd-48e8-b1b4-00ca677ea436\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"5cc38c02-6607-4cbd-b9af-849ca4514ee9\",\"columnProperty\": {\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}}],\"axisProperties\": [{\"id\": \"bbd7f3f7-47c9-42e6-9c35-e4051d173e2f\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total sales\"],\"isOpposite\": false}},{\"id\": \"2c06a8aa-0e43-4af2-9d3d-87fc825eff06\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total quantity purchased\"],\"isOpposite\": true}},{\"id\": \"3f01a6b2-d310-4a00-aed4-ae96e77d1c16\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"product\"]}}]}"
       display_mode: TABLE_MODE
     viz_guid: 4a7a0d7f-b194-4192-a70d-2aacfef46341
-  - id: Viz_2
+  - id: Viz_3
     answer:
       name: Total sales by region
       tables:
@@ -82,7 +125,7 @@ liveboard:
         client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"chartSpecific\": {\"pivotSummariesState\": {}},\"kpiDisplayProperties\": {\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\",\"linkChangeColorsWithAnomaly\": true}},\"columnProperties\": [{\"columnId\": \"region\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Total sales\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"e379438e-d726-4ade-aac8-9e0f6858fd3c\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"44d24ef7-60b4-4270-bfbf-f888df7097d3\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}}],\"axisProperties\": [{\"id\": \"6aec4321-16ab-4035-b3d3-ff9c23d8db44\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total sales\"],\"isOpposite\": false}},{\"id\": \"abaf66e6-7fa5-41d6-a86f-7066b701345f\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"region\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east\",\"color\": \"#06BF7F\"},{\"serieName\": \"midwest\",\"color\": \"#FCC838\"},{\"serieName\": \"south\",\"color\": \"#48D1E0\"},{\"serieName\": \"southwest\",\"color\": \"#71A1F4\"},{\"serieName\": \"west\",\"color\": \"#2E75F0\"}]}"
       display_mode: CHART_MODE
     viz_guid: 62001d1e-e106-4100-bff2-c111f41c8e9a
-  - id: Viz_3
+  - id: Viz_4
     answer:
       name: Total sales by product and region
       tables:
@@ -125,7 +168,7 @@ liveboard:
         client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"responsiveLayoutPreference\": \"AUTO_ON\",\"chartSpecific\": {\"pivotSummariesState\": {}},\"showStackedLabels\": true,\"allLabels\": true,\"kpiDisplayProperties\": {\"showChange\": true,\"showChangeAs\": \"PERCENT\",\"changeInterpretation\": \"UPWARD_IS_GOOD\",\"linkChangeColorsWithAnomaly\": true}},\"columnProperties\": [{\"columnId\": \"region\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"product\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"Total sales\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"f37efe30-79dc-4f47-8a39-03c584ad4024\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}},{\"columnId\": \"54183d11-fffb-4b38-9b16-40d2f46e58cf\",\"columnProperty\": {\"dataLabels\": true,\"kpiColumnProperties\": {\"showSparkline\": true,\"showComparisonDate\": true,\"showCurrentDateLabel\": true,\"showPreviousDateLabel\": true,\"showPreviousValue\": true}}}],\"axisProperties\": [{\"id\": \"035213a0-8e85-4fcf-b7bc-38e8c65323fe\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total sales\"],\"isOpposite\": false}},{\"id\": \"b84b021f-46f1-45c7-a336-f6b91c59256e\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"product\"]}}],\"systemSeriesColors\": [{\"serieName\": \"east\",\"color\": \"#06BF7F\"},{\"serieName\": \"midwest\",\"color\": \"#FCC838\"},{\"serieName\": \"south\",\"color\": \"#48D1E0\"},{\"serieName\": \"southwest\",\"color\": \"#71A1F4\"},{\"serieName\": \"west\",\"color\": \"#2E75F0\"}]}"
       display_mode: CHART_MODE
     viz_guid: 7486e7ec-6a70-493e-9a93-6d86e23a49c7
-  - id: Viz_4
+  - id: Viz_5
     answer:
       name: "Total sales, Total quantity purchased by product"
       tables:
@@ -167,7 +210,7 @@ liveboard:
         client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"columnProperties\": [{\"columnId\": \"Total quantity purchased\",\"columnProperty\": {}},{\"columnId\": \"product\",\"columnProperty\": {}},{\"columnId\": \"Total sales\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"968643a1-d3d8-4665-b72f-c7b4555872ae\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total sales\"],\"isOpposite\": false}},{\"id\": \"dc30b10c-9e42-403f-9133-073f0732c0ce\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total quantity purchased\"],\"isOpposite\": true}},{\"id\": \"b0f70719-4a35-4512-967d-ec47b7dae6af\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"product\"]}}]}"
       display_mode: TABLE_MODE
     viz_guid: d4bd3c3b-837c-4f0c-9ce9-5c779d0141f2
-  - id: Viz_5
+  - id: Viz_6
     answer:
       name: "Total sales, Total quantity purchased by region"
       tables:
@@ -209,7 +252,7 @@ liveboard:
         client_state_v2: "{\"version\": \"V4DOT2\",\"chartProperties\": {\"gridLines\": {},\"responsiveLayoutPreference\": \"USER_PREFERRED_ON\",\"chartSpecific\": {\"dataFieldArea\": \"column\"}},\"columnProperties\": [{\"columnId\": \"region\",\"columnProperty\": {}},{\"columnId\": \"Total sales\",\"columnProperty\": {}},{\"columnId\": \"Total quantity purchased\",\"columnProperty\": {}}],\"axisProperties\": [{\"id\": \"b9cbe7c6-ae41-45e7-a339-933218cce921\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total sales\"],\"isOpposite\": false}},{\"id\": \"5e0f4991-8a0c-4e70-82e7-59ae7eb0ea0c\",\"properties\": {\"axisType\": \"Y\",\"linkedColumns\": [\"Total quantity purchased\"],\"isOpposite\": true}},{\"id\": \"e24d369d-40ea-4e61-92b9-bf5848e4a0c8\",\"properties\": {\"axisType\": \"X\",\"linkedColumns\": [\"region\"]}}]}"
       display_mode: TABLE_MODE
     viz_guid: 6e1149e3-187e-4c83-8637-9646d319a749
-  - id: Viz_6
+  - id: Viz_7
     answer:
       name: Total sales by product and region
       tables:
@@ -256,30 +299,35 @@ liveboard:
     tiles:
     - visualization_id: Viz_1
       x: 0
+      "y": 0
+      height: 8
+      width: 6
+    - visualization_id: Viz_2
+      x: 0
       "y": 8
       height: 8
       width: 12
-    - visualization_id: Viz_2
+    - visualization_id: Viz_3
       x: 6
       "y": 0
       height: 8
       width: 6
-    - visualization_id: Viz_3
+    - visualization_id: Viz_4
       x: 6
       "y": 16
       height: 8
       width: 6
-    - visualization_id: Viz_4
+    - visualization_id: Viz_5
       x: 0
       "y": 24
       height: 8
       width: 12
-    - visualization_id: Viz_5
+    - visualization_id: Viz_6
       x: 0
       "y": 32
       height: 8
       width: 12
-    - visualization_id: Viz_6
+    - visualization_id: Viz_7
       x: 0
       "y": 40
       height: 8
